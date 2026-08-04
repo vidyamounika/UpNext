@@ -5,7 +5,7 @@ import {
   FaMicrophone, FaChartLine, FaUser, FaMoon, FaSignOutAlt,
   FaBell, FaSearch, FaTrophy, FaFire, FaStar,
   FaCode, FaCheck, FaThLarge, FaGlobeAmericas,
-  FaChevronLeft, FaChevronRight, FaSun
+  FaChevronLeft, FaChevronRight, FaSun, FaExclamationTriangle
 } from "react-icons/fa";
 import { MdShield } from "react-icons/md";
 import axios from "axios";
@@ -170,31 +170,25 @@ function Dashboard() {
                 <h3>AI Skill Gap Analysis</h3>
                 <p>vs. {data.target_role} benchmark</p>
               </div>
-              <span className="db_link purple_text">Full report ›</span>
             </div>
 
-            {data.skill_gap.skills.map(skill => (
-              <div key={skill.name} className="db_skill_row">
-                <div className="db_skill_lbls">
-                  <span>{skill.name}</span>
-                  <span>
-                    <b className={skill.user_level < skill.required ? "warn_text" : "good_text"}>
-                      {skill.user_level}%
-                    </b>
-                    {" / "}{skill.required}% needed
-                  </span>
-                </div>
-                <div className="db_bar_track">
-                  <div className="db_bar_fill" style={{ width: `${skill.user_level}%` }} />
-                  <div className="db_bar_target" style={{ left: `${skill.required}%` }} />
-                </div>
-              </div>
-            ))}
+            <div className="db_journey_labels">
+              <span className="db_journey_from">{data.current_role}</span>
+              <span className="db_journey_score">{data.overall_readiness}% ready</span>
+              <span className="db_journey_to">{data.target_role}</span>
+            </div>
+            <div className="db_journey_bar">
+              <div className="db_journey_fill" style={{ width: `${data.overall_readiness}%` }} />
+            </div>
 
-            <div className="db_skill_legend">
-              <span><i className="leg_dot" /> Your level</span>
-              <span><i className="leg_tick" /> Target</span>
-              <span className="leg_gain">↗ +{data.skill_gap.monthly_gain} pts this month</span>
+            <div className="db_gap_footer">
+              <span className="db_gap_count">
+                <FaExclamationTriangle />
+                {data.skill_gap.skills.filter(s => s.required - s.user_level > 15).length} critical gaps identified
+              </span>
+              <span className="db_link purple_text" onClick={() => navigate("/skill-gap")} style={{ cursor: "pointer" }}>
+                View full report →
+              </span>
             </div>
           </div>
 

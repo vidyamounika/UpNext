@@ -399,6 +399,8 @@ def get_dashboard_data(email: str, db: Session = Depends(get_db)):
         primary_goal=goal.goal if goal else ""
     )
 
+    dashboard_data["current_role"] = profile.current_role
+
     return dashboard_data
 
 @app.post("/reset-password")

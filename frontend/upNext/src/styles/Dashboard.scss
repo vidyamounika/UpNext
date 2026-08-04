@@ -336,76 +336,72 @@
   &.blue_text   { color: #3b82f6; }
 }
 
-/* ── Skill Gap ── */
-.db_skill_row { margin-bottom: 16px; }
-
-.db_skill_lbls {
+/* ── Skill Gap Journey ── */
+.db_journey_labels {
   display: flex;
   justify-content: space-between;
-  font-size: 14px;
-  color: #374151;
-  margin-bottom: 6px;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.db_journey_from {
+  font-size: 12px;
+  color: #6b7280;
   font-weight: 500;
+  max-width: 35%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
-.warn_text { color: #f59e0b; font-weight: 700; }
-.good_text { color: #16a34a; font-weight: 700; }
-
-.db_bar_track {
-  position: relative;
-  height: 10px;
-  background: #f3f4f6;
-  border-radius: 6px;
-  overflow: visible;
+.db_journey_to {
+  font-size: 12px;
+  color: #6b7280;
+  font-weight: 500;
+  max-width: 35%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: right;
 }
 
-.db_bar_fill {
+.db_journey_score {
+  font-size: 13px;
+  font-weight: 700;
+  color: #7c3aed;
+}
+
+.db_journey_bar {
+  height: 14px;
+  background: #ede9fe;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+
+.db_journey_fill {
   height: 100%;
-  border-radius: 6px;
+  border-radius: 8px;
   background: linear-gradient(90deg, #7c3aed, #3b82f6);
-  transition: width 0.6s ease;
+  transition: width 0.8s ease;
 }
 
-.db_bar_target {
-  position: absolute;
-  top: -5px;
-  width: 3px;
-  height: 20px;
-  background: #f59e0b;
-  border-radius: 2px;
-  transform: translateX(-50%);
-}
-
-.db_skill_legend {
+.db_gap_footer {
   display: flex;
   align-items: center;
-  gap: 16px;
-  margin-top: 12px;
+  justify-content: space-between;
+  padding-top: 4px;
+}
+
+.db_gap_count {
+  display: flex;
+  align-items: center;
+  gap: 6px;
   font-size: 13px;
-  color: #6b7280;
-}
-
-.leg_dot {
-  display: inline-block;
-  width: 10px; height: 10px;
-  border-radius: 50%;
-  background: linear-gradient(90deg, #7c3aed, #3b82f6);
-  margin-right: 4px;
-}
-
-.leg_tick {
-  display: inline-block;
-  width: 3px; height: 14px;
-  background: #f59e0b;
-  border-radius: 2px;
-  margin-right: 4px;
-  vertical-align: middle;
-}
-
-.leg_gain {
-  margin-left: auto;
-  color: #16a34a;
+  color: #f59e0b;
   font-weight: 600;
+
+  svg { font-size: 12px; }
 }
 
 /* ── Roadmap ── */
@@ -789,7 +785,8 @@
   .db_skill_lbls { color: #d1d5db; }
   .db_prog_row { color: #d1d5db; }
 
-  .db_bar_track, .db_prog_track, .db_xp_track { background: #1e1e30; }
+  .db_journey_bar { background: #2a1a5e; }
+  .db_prog_track, .db_xp_track { background: #1e1e30; }
   .db_emp_track { background: #1e1e30; }
 
   .db_stat_box { background: #1e1e30; }
@@ -820,7 +817,8 @@
   .db_badge span { color: #9ca3af; }
   .db_badge.locked span { color: #4b5563; }
 
-  .db_skill_legend { color: #9ca3af; }
+  .db_journey_from, .db_journey_to { color: #9ca3af; }
+  .db_gap_count { color: #fbbf24; }
 
   .db_streak_chip { background: #1a110a; border-color: #5a3010; }
 }
