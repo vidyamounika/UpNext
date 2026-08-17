@@ -6,6 +6,8 @@ import SignUp from './components/SignUp'
 import LogIn from './components/LogIn'
 import Dashboard from './components/Dashboard'
 import ForgotPassword from './components/ForgotPassword';
+import SkillGapAnalysis from './components/SkillGapAnalysis';
+import Roadmap from './components/Roadmap';
 
 function App() {
 
@@ -18,6 +20,8 @@ function App() {
         <Route path="/login" element={<LogIn />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path='/forgot-password' element={<ForgotPassword/>}/>
+        <Route path="/skill-gap" element={<SkillGapAnalysis />} />
+        <Route path="/roadmap" element={<Roadmap />} />
       </Routes>
     </BrowserRouter>
   );

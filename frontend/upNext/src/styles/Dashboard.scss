@@ -428,71 +428,112 @@
   transition: width 0.6s ease;
 }
 
-.db_week_lbl {
-  font-size: 12px;
-  font-weight: 700;
-  color: #9ca3af;
-  letter-spacing: 0.5px;
-  margin-bottom: 12px;
+/* Roadmap phase visual */
+.db_roadmap_phases_visual {
+  display: flex;
+  align-items: flex-start;
+  margin: 16px 0 4px;
+  padding: 0 4px;
 }
 
-.db_task_item {
+.db_rm_phase_step {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 12px;
-  padding: 13px 16px;
-  background: #f9fafb;
-  border-radius: 12px;
-  margin-bottom: 8px;
-  font-size: 14px;
-  color: #374151;
-  font-weight: 500;
-
-  &.done span {
-    text-decoration: line-through;
-    color: #9ca3af;
-  }
-}
-
-.db_task_box {
-  width: 20px; height: 20px;
-  border-radius: 5px;
-  border: 2px solid #d1d5db;
-  display: flex; align-items: center; justify-content: center;
-  flex-shrink: 0;
-
-  &.checked {
-    background: #7c3aed;
-    border-color: #7c3aed;
-    color: white;
-    font-size: 10px;
-  }
-}
-
-.db_phases {
-  display: flex;
-  gap: 10px;
-  margin-top: 16px;
-  flex-wrap: wrap;
-}
-
-.db_phase_tab {
+  gap: 8px;
   flex: 1;
-  min-width: 80px;
-  padding: 10px 14px;
-  border-radius: 12px;
-  background: #f3f4f6;
-  text-align: center;
-  cursor: pointer;
 
-  span { font-size: 12px; color: #9ca3af; display: block; margin-bottom: 2px; }
-  p { font-size: 13px; font-weight: 600; color: #6b7280; }
-
-  &.active {
-    background: #dcfce7;
-    span { color: #16a34a; }
-    p { color: #16a34a; }
+  .db_rm_phase_circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid #e5e7eb;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+    font-weight: 700;
+    color: #9ca3af;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 1;
   }
+
+  .db_rm_phase_text {
+    text-align: center;
+
+    .db_rm_phase_month {
+      display: block;
+      font-size: 10px;
+      font-weight: 600;
+      color: #9ca3af;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .db_rm_phase_name {
+      font-size: 11px;
+      color: #6b7280;
+      margin-top: 2px;
+      max-width: 80px;
+    }
+  }
+
+  &.current {
+    .db_rm_phase_circle {
+      border-color: #7c3aed;
+      background: #f5f3ff;
+      color: #7c3aed;
+      animation: db_pulse_ring 2s infinite;
+    }
+
+    .db_rm_phase_text {
+      .db_rm_phase_month { color: #7c3aed; }
+      .db_rm_phase_name { color: #111827; font-weight: 600; }
+    }
+  }
+
+  &.done {
+    .db_rm_phase_circle {
+      border-color: #7c3aed;
+      background: linear-gradient(135deg, #7c3aed, #3b82f6);
+      color: white;
+      font-size: 13px;
+    }
+
+    .db_rm_phase_text {
+      .db_rm_phase_month { color: #7c3aed; }
+      .db_rm_phase_name { color: #374151; font-weight: 500; }
+    }
+  }
+}
+
+.db_rm_connector {
+  flex: 1;
+  height: 2px;
+  background: #e5e7eb;
+  margin-top: 20px;
+  margin-bottom: 28px;
+  transition: background 0.3s ease;
+
+  &.done {
+    background: linear-gradient(90deg, #7c3aed, #3b82f6);
+  }
+}
+
+.db_rm_task_count {
+  text-align: center;
+  font-size: 12px;
+  color: #9ca3af;
+  margin-top: 4px;
+  padding-bottom: 4px;
+}
+
+@keyframes db_pulse_ring {
+  0%   { box-shadow: 0 0 0 0 rgba(124,58,237,0.3); }
+  70%  { box-shadow: 0 0 0 8px rgba(124,58,237,0); }
+  100% { box-shadow: 0 0 0 0 rgba(124,58,237,0); }
 }
 
 /* ── Career Insights ── */
@@ -788,6 +829,13 @@
   .db_journey_bar { background: #2a1a5e; }
   .db_prog_track, .db_xp_track { background: #1e1e30; }
   .db_emp_track { background: #1e1e30; }
+
+  .db_rm_phase_step .db_rm_phase_circle { background: #1e1e30; border-color: #374151; }
+  .db_rm_phase_step .db_rm_phase_text .db_rm_phase_name { color: #9ca3af; }
+  .db_rm_phase_step.current .db_rm_phase_circle { background: #1a0a3a; }
+  .db_rm_phase_step.done .db_rm_phase_circle { background: linear-gradient(135deg, #7c3aed, #3b82f6); }
+  .db_rm_connector { background: #374151; }
+  .db_rm_task_count { color: #6b7280; }
 
   .db_stat_box { background: #1e1e30; }
   .db_stat_val { color: #e5e7eb; }

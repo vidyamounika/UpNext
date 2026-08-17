@@ -28,3 +28,8 @@ class OnboardingData(BaseModel):
 class ResetPassword(BaseModel):
     email: str
     new_password: str
+
+class ProgressSave(BaseModel):
+    email: str
+    tasks: dict
+    total_tasks: int

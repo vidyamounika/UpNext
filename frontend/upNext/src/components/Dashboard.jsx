@@ -17,7 +17,6 @@ function Dashboard() {
   const [loading, setLoading] = useState(true);
   const [collapsed, setCollapsed] = useState(false);
   const [darkMode, setDarkMode] = useState(false);
-
   useEffect(() => {
     const email = localStorage.getItem("upnext_email");
     if (!email) { navigate("/login"); return; }
@@ -67,14 +66,14 @@ function Dashboard() {
   };
 
   const navItems = [
-    { icon: <FaThLarge />, label: "Dashboard", active: true },
-    { icon: <FaBrain />, label: "Skill Gap Analysis" },
-    { icon: <FaMap />, label: "Roadmap" },
-    { icon: <FaFolder />, label: "Projects" },
-    { icon: <FaFileAlt />, label: "Resume Analyzer" },
-    { icon: <FaMicrophone />, label: "Interview Prep" },
-    { icon: <FaChartLine />, label: "Career Insights" },
-    { icon: <FaUser />, label: "Profile" },
+    { icon: <FaThLarge />, label: "Dashboard", path: "/dashboard", active: true },
+    { icon: <FaBrain />, label: "Skill Gap Analysis", path: "/skill-gap" },
+    { icon: <FaMap />, label: "Roadmap", path: "/roadmap" },
+    { icon: <FaFolder />, label: "Projects", path: null },
+    { icon: <FaFileAlt />, label: "Resume Analyzer", path: null },
+    { icon: <FaMicrophone />, label: "Interview Prep", path: null },
+    { icon: <FaChartLine />, label: "Career Insights", path: null },
+    { icon: <FaUser />, label: "Profile", path: null },
   ];
 
   return (
@@ -91,7 +90,11 @@ function Dashboard() {
 
         <nav className="db_nav">
           {navItems.map(item => (
-            <div key={item.label} className={`db_nav_item ${item.active ? "active" : ""}`} title={collapsed ? item.label : ""}>
+            <div key={item.label}
+              className={`db_nav_item ${item.active ? "active" : ""}`}
+              title={collapsed ? item.label : ""}
+              onClick={() => item.path && navigate(item.path)}
+              style={{ cursor: item.path ? "pointer" : "default" }}>
               {item.icon}{!collapsed && <span>{item.label}</span>}
             </div>
           ))}
@@ -193,44 +196,58 @@ function Dashboard() {
           </div>
 
           {/* Roadmap */}
-          <div className="db_card">
-            <div className="db_card_head">
-              <div className="db_card_icon bg_blue"><FaMap /></div>
-              <div>
-                <h3>Personalized Roadmap</h3>
-                <p>Week {data.roadmap.current_week} of {data.roadmap.total_weeks} · {data.roadmap.plan_duration}</p>
-              </div>
-              <span className="db_link blue_text">View all ›</span>
-            </div>
-
-            <div className="db_prog_row">
-              <span>Overall progress</span>
-              <span>{data.roadmap.progress_percent}%</span>
-            </div>
-            <div className="db_prog_track">
-              <div className="db_prog_fill" style={{ width: `${data.roadmap.progress_percent}%` }} />
-            </div>
-
-            <p className="db_week_lbl">THIS WEEK — {data.roadmap.this_week_theme.toUpperCase()}</p>
-
-            {data.roadmap.this_week_tasks.map((task, i) => (
-              <div key={i} className={`db_task_item ${task.done ? "done" : ""}`}>
-                <div className={`db_task_box ${task.done ? "checked" : ""}`}>
-                  {task.done && <FaCheck />}
+          {(() => {
+            const totalTasks = data.roadmap.total_tasks > 0 ? data.roadmap.total_tasks : data.roadmap.total_weeks * 3;
+            const doneTasks = data.roadmap.tasks_done || 0;
+            const liveProgress = data.roadmap.progress_pct ?? (totalTasks > 0 ? Math.round((doneTasks / totalTasks) * 100) : 0);
+            const numPhases = (data.roadmap.phases || []).length || 1;
+            return (
+              <div className="db_card">
+                <div className="db_card_head">
+                  <div className="db_card_icon bg_blue"><FaMap /></div>
+                  <div>
+                    <h3>Personalized Roadmap</h3>
+                    <p>Week {data.roadmap.current_week} of {data.roadmap.total_weeks} · {data.roadmap.plan_duration}</p>
+                  </div>
+                  <span className="db_link blue_text" onClick={() => navigate("/roadmap")} style={{ cursor: "pointer" }}>View plan ›</span>
                 </div>
-                <span>{task.task}</span>
-              </div>
-            ))}
 
-            <div className="db_phases">
-              {data.roadmap.phases.map((phase, i) => (
-                <div key={i} className={`db_phase_tab ${i === 0 ? "active" : ""}`}>
-                  <span>Month {phase.month}</span>
-                  <p>{phase.name}</p>
+                <div className="db_prog_row">
+                  <span>Overall progress</span>
+                  <span>{liveProgress}%</span>
                 </div>
-              ))}
-            </div>
-          </div>
+                <div className="db_prog_track">
+                  <div className="db_prog_fill" style={{ width: `${liveProgress}%` }} />
+                </div>
+
+                <div className="db_roadmap_phases_visual">
+                  {(data.roadmap.phases || []).map((phase, i) => {
+                    const phaseComplete = liveProgress >= Math.round(((i + 1) / numPhases) * 100);
+                    const phaseCurrent = !phaseComplete && liveProgress >= Math.round((i / numPhases) * 100);
+                    return (
+                      <React.Fragment key={i}>
+                        <div className={`db_rm_phase_step${phaseComplete ? " done" : ""}${phaseCurrent ? " current" : ""}`}>
+                          <div className="db_rm_phase_circle">
+                            {phaseComplete ? <FaCheck /> : <span>{i + 1}</span>}
+                          </div>
+                          <div className="db_rm_phase_text">
+                            <span className="db_rm_phase_month">Month {phase.month || i + 1}</span>
+                            <p className="db_rm_phase_name">{phase.name}</p>
+                          </div>
+                        </div>
+                        {i < (data.roadmap.phases.length - 1) && (
+                          <div className={`db_rm_connector${phaseComplete ? " done" : ""}`} />
+                        )}
+                      </React.Fragment>
+                    );
+                  })}
+                </div>
+                <div className="db_rm_task_count">
+                  {doneTasks} / {totalTasks} tasks complete
+                </div>
+              </div>
+            );
+          })()}
 
           {/* Career Insights */}
           <div className="db_card">

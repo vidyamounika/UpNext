@@ -16,7 +16,12 @@ load_dotenv()
 
 DATABASE_URL = os.getenv("DATABASE_URL")
 
-engine = create_engine(DATABASE_URL)
+engine = create_engine(
+    DATABASE_URL,
+    pool_pre_ping=True,        # test connection before each use; reconnects after NeonDB wakes
+    pool_recycle=300,          # recycle connections every 5 min to avoid stale handles
+    connect_args={"connect_timeout": 10},
+)
 """
 SQLAlchemy engine connected to the Neon PostgreSQL database using DATABASE_URL from .env.
 """

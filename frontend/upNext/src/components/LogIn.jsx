@@ -32,6 +32,7 @@ function Login() {
 
   const [isLoading, setIsLoading] = useState(false);
   const [isLaunching, setIsLaunching] = useState(false);
+  const [dbWaking, setDbWaking] = useState(false);
   const [isLoggedIn, setIsLoggedIn] = useState(location.state?.startOnboarding || false);
   const [step, setStep] = useState(1);
 
@@ -105,28 +106,35 @@ function Login() {
     }
 
     setIsLoading(true);
-    try {
-      const response = await axios.post("http://127.0.0.1:8000/login", {
-        email,
-        password,
-      });
-
-      if (response.data.message === "Login Successful") {
-        if (response.data.onboarding_complete) {
-          localStorage.setItem("upnext_email", email);
-          navigate("/dashboard");
+    setDbWaking(false);
+    const attemptLogin = async (retriesLeft) => {
+      try {
+        const response = await axios.post("http://127.0.0.1:8000/login", { email, password });
+        setDbWaking(false);
+        if (response.data.message === "Login Successful") {
+          if (response.data.onboarding_complete) {
+            localStorage.setItem("upnext_email", email);
+            navigate("/dashboard");
+          } else {
+            setIsLoggedIn(true);
+            setStep(1);
+          }
         } else {
-          setIsLoggedIn(true);
-          setStep(1);
+          showErrorPopup(response.data.message);
+          setIsLoading(false);
         }
-      } else {
-        showErrorPopup(response.data.message);
+      } catch (error) {
+        if (error.response?.status === 503 && retriesLeft > 0) {
+          setDbWaking(true);
+          setTimeout(() => attemptLogin(retriesLeft - 1), 8000);
+        } else {
+          setDbWaking(false);
+          showErrorPopup(error.response?.data?.message || "Login failed. Please try again.");
+          setIsLoading(false);
+        }
       }
-    } catch (error) {
-      showErrorPopup(error.response?.data?.message || "Login Failed");
-    } finally {
-      setIsLoading(false);
-    }
+    };
+    attemptLogin(5);
   };
 
   const cameFromSignup = location.state?.startOnboarding || false;
@@ -226,12 +234,15 @@ function Login() {
       localStorage.setItem("upnext_email", email);
       navigate("/dashboard");
     } catch (error) {
-      showErrorPopup(
-        error.response?.data?.detail ||
-        error.response?.data?.message ||
-        "Failed to save onboarding"
-      );
-    } finally {
+      if (error.response?.status === 503) {
+        showErrorPopup("Database is waking up... please try again in 5 seconds");
+      } else {
+        showErrorPopup(
+          error.response?.data?.detail ||
+          error.response?.data?.message ||
+          "Failed to save onboarding"
+        );
+      }
       setIsLaunching(false);
     }
   };
@@ -517,8 +528,13 @@ function Login() {
 </div>
 
           <button type="submit" className="login_btn" disabled={isLoading}>
-            {isLoading ? "Logging in..." : "Log In →"}
+            {dbWaking ? "⏳ Waking database..." : isLoading ? "Logging in..." : "Log In →"}
           </button>
+          {dbWaking && (
+            <p style={{ fontSize: 12, color: "#7c3aed", textAlign: "center", marginTop: 8 }}>
+              Database is starting up — retrying automatically...
+            </p>
+          )}
         </form>
 
         <div className="signup_text">
