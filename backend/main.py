@@ -118,91 +118,91 @@ ROLE_SKILLS_SEED = {
 # ─── Career insights per role family (hardcoded, no LLM needed) ──
 CAREER_INSIGHTS_BY_ROLE = {
     "data scientist": {
-        "open_roles": 18000, "median_salary": "$130K", "demand_growth": "+35%",
+        "open_roles": 18000, "median_salary": "₹18 LPA", "demand_growth": "+35%",
         "top_skills": [
             {"skill": "Python", "demand": 95}, {"skill": "Machine Learning", "demand": 90},
             {"skill": "SQL", "demand": 85}, {"skill": "Statistics", "demand": 80}, {"skill": "Deep Learning", "demand": 75},
         ],
     },
     "machine learning": {
-        "open_roles": 12000, "median_salary": "$145K", "demand_growth": "+42%",
+        "open_roles": 12000, "median_salary": "₹22 LPA", "demand_growth": "+42%",
         "top_skills": [
             {"skill": "Python", "demand": 98}, {"skill": "PyTorch", "demand": 88},
             {"skill": "TensorFlow", "demand": 85}, {"skill": "MLOps", "demand": 80}, {"skill": "Statistics", "demand": 78},
         ],
     },
     "ai engineer": {
-        "open_roles": 10000, "median_salary": "$150K", "demand_growth": "+48%",
+        "open_roles": 10000, "median_salary": "₹24 LPA", "demand_growth": "+48%",
         "top_skills": [
             {"skill": "Python", "demand": 98}, {"skill": "LLMs", "demand": 90},
             {"skill": "PyTorch", "demand": 85}, {"skill": "MLOps", "demand": 80}, {"skill": "REST APIs", "demand": 75},
         ],
     },
     "software engineer": {
-        "open_roles": 45000, "median_salary": "$115K", "demand_growth": "+22%",
+        "open_roles": 45000, "median_salary": "₹14 LPA", "demand_growth": "+22%",
         "top_skills": [
             {"skill": "Python", "demand": 92}, {"skill": "JavaScript", "demand": 87},
             {"skill": "System Design", "demand": 82}, {"skill": "AWS", "demand": 76}, {"skill": "Git", "demand": 70},
         ],
     },
     "devops": {
-        "open_roles": 22000, "median_salary": "$125K", "demand_growth": "+28%",
+        "open_roles": 22000, "median_salary": "₹16 LPA", "demand_growth": "+28%",
         "top_skills": [
             {"skill": "Kubernetes", "demand": 90}, {"skill": "Docker", "demand": 88},
             {"skill": "AWS", "demand": 85}, {"skill": "Terraform", "demand": 80}, {"skill": "CI/CD", "demand": 78},
         ],
     },
     "cloud": {
-        "open_roles": 30000, "median_salary": "$135K", "demand_growth": "+32%",
+        "open_roles": 30000, "median_salary": "₹18 LPA", "demand_growth": "+32%",
         "top_skills": [
             {"skill": "AWS", "demand": 92}, {"skill": "Azure", "demand": 85},
             {"skill": "Kubernetes", "demand": 82}, {"skill": "Terraform", "demand": 78}, {"skill": "Security", "demand": 75},
         ],
     },
     "cybersecurity": {
-        "open_roles": 25000, "median_salary": "$120K", "demand_growth": "+30%",
+        "open_roles": 25000, "median_salary": "₹15 LPA", "demand_growth": "+30%",
         "top_skills": [
             {"skill": "Network Security", "demand": 90}, {"skill": "Python", "demand": 82},
             {"skill": "Penetration Testing", "demand": 80}, {"skill": "SIEM", "demand": 76}, {"skill": "Compliance", "demand": 72},
         ],
     },
     "frontend": {
-        "open_roles": 35000, "median_salary": "$105K", "demand_growth": "+18%",
+        "open_roles": 35000, "median_salary": "₹12 LPA", "demand_growth": "+18%",
         "top_skills": [
             {"skill": "React", "demand": 92}, {"skill": "TypeScript", "demand": 88},
             {"skill": "JavaScript", "demand": 95}, {"skill": "CSS", "demand": 82}, {"skill": "Testing", "demand": 72},
         ],
     },
     "backend": {
-        "open_roles": 38000, "median_salary": "$118K", "demand_growth": "+20%",
+        "open_roles": 38000, "median_salary": "₹14 LPA", "demand_growth": "+20%",
         "top_skills": [
             {"skill": "Python", "demand": 88}, {"skill": "REST APIs", "demand": 90},
             {"skill": "SQL", "demand": 85}, {"skill": "Docker", "demand": 78}, {"skill": "System Design", "demand": 82},
         ],
     },
     "full stack": {
-        "open_roles": 32000, "median_salary": "$112K", "demand_growth": "+20%",
+        "open_roles": 32000, "median_salary": "₹13 LPA", "demand_growth": "+20%",
         "top_skills": [
             {"skill": "JavaScript", "demand": 93}, {"skill": "React", "demand": 88},
             {"skill": "Node.js", "demand": 85}, {"skill": "SQL", "demand": 80}, {"skill": "Docker", "demand": 75},
         ],
     },
     "data engineer": {
-        "open_roles": 14000, "median_salary": "$125K", "demand_growth": "+30%",
+        "open_roles": 14000, "median_salary": "₹16 LPA", "demand_growth": "+30%",
         "top_skills": [
             {"skill": "Python", "demand": 90}, {"skill": "SQL", "demand": 92},
             {"skill": "Spark", "demand": 80}, {"skill": "Airflow", "demand": 75}, {"skill": "Kafka", "demand": 72},
         ],
     },
     "mobile": {
-        "open_roles": 20000, "median_salary": "$108K", "demand_growth": "+16%",
+        "open_roles": 20000, "median_salary": "₹12 LPA", "demand_growth": "+16%",
         "top_skills": [
             {"skill": "React Native", "demand": 85}, {"skill": "Swift", "demand": 80},
             {"skill": "Kotlin", "demand": 78}, {"skill": "REST APIs", "demand": 82}, {"skill": "Testing", "demand": 70},
         ],
     },
     "sre": {
-        "open_roles": 18000, "median_salary": "$130K", "demand_growth": "+26%",
+        "open_roles": 18000, "median_salary": "₹18 LPA", "demand_growth": "+26%",
         "top_skills": [
             {"skill": "Kubernetes", "demand": 90}, {"skill": "Linux", "demand": 88},
             {"skill": "Monitoring", "demand": 85}, {"skill": "Python", "demand": 80}, {"skill": "Automation", "demand": 78},
@@ -211,39 +211,158 @@ CAREER_INSIGHTS_BY_ROLE = {
 }
 
 # ─── IT domain keywords for validation ───────────────────────────
+
+# Roles that are clearly NOT IT — hard block these
+NON_IT_ROLE_BLOCKLIST = {
+    "nurse", "doctor", "physician", "surgeon", "dentist", "pharmacist",
+    "teacher", "professor", "lecturer", "principal", "tutor",
+    "lawyer", "attorney", "judge", "paralegal",
+    "accountant", "auditor", "banker", "financial advisor", "broker",
+    "chef", "cook", "baker", "waiter", "bartender",
+    "driver", "pilot", "mechanic", "plumber", "electrician", "carpenter",
+    "farmer", "gardener", "cleaner", "janitor",
+    "police", "soldier", "firefighter", "paramedic",
+    "journalist", "reporter", "editor", "writer", "author",
+    "artist", "painter", "musician", "actor", "dancer",
+    "psychologist", "therapist", "counselor", "social worker",
+    "hr", "recruiter", "receptionist", "secretary",
+    "sales", "marketing", "cashier", "retail",
+    "testing", "tester",  # too vague — must be "qa engineer" or "test engineer"
+}
+
+# Roles that are clearly IT — allow these
+IT_ROLE_ALLOWLIST = {
+    "software engineer", "software developer", "senior software engineer",
+    "frontend developer", "frontend engineer", "backend developer", "backend engineer",
+    "full stack developer", "full stack engineer", "fullstack developer",
+    "data scientist", "data analyst", "data engineer",
+    "machine learning engineer", "ml engineer", "ai engineer",
+    "devops engineer", "devops", "site reliability engineer", "sre",
+    "cloud engineer", "cloud architect", "cloud developer",
+    "cybersecurity engineer", "security engineer", "network engineer",
+    "mobile developer", "ios developer", "android developer",
+    "qa engineer", "test engineer", "automation engineer",
+    "database administrator", "dba", "systems administrator",
+    "technical lead", "tech lead", "engineering manager",
+    "product manager", "scrum master", "platform engineer",
+    "solutions architect", "enterprise architect", "it architect",
+    "programmer", "coder", "software architect", "infrastructure engineer",
+    "devsecops", "mlops engineer", "data platform engineer",
+}
+
+# IT keyword fragments — a role must contain at least one of these
 IT_ROLE_KEYWORDS = {
-    "engineer", "developer", "scientist", "analyst", "architect",
-    "devops", "cloud", "data", "security", "network", "admin",
-    "software", "frontend", "backend", "fullstack", "full stack",
+    "software", "developer", "engineer", "scientist", "architect",
+    "devops", "cloud", "frontend", "backend", "fullstack", "full stack",
     "mobile", "qa", "sre", "ml", "ai", "programmer", "coder",
-    "infrastructure", "dba", "lead", "technical", "tech",
-    "scrum", "product manager", "platform", "devsecops", "site reliability",
+    "infrastructure", "dba", "technical lead", "tech lead",
+    "scrum", "platform", "devsecops", "site reliability",
+    "cybersecurity", "network engineer", "data engineer",
+    "data scientist", "data analyst", "machine learning",
+    "automation engineer", "test engineer", "solutions architect",
 }
 
-IT_SKILL_KEYWORDS = {
-    "python", "java", "javascript", "typescript", "react", "angular",
-    "vue", "node", "sql", "mongodb", "aws", "azure", "gcp", "docker",
-    "kubernetes", "git", "linux", "html", "css", "machine learning",
-    "tensorflow", "pytorch", "spark", "terraform", "api", "rest",
-    "programming", "coding", "devops", "ci/cd", "microservices",
+# Built from ROLE_SKILLS_SEED + common IT terms — only these are accepted
+IT_SKILL_WHITELIST = {
+    s.lower() for skills in ROLE_SKILLS_SEED.values() for s, _ in skills
+} | {
+    # Languages
+    "python", "java", "javascript", "typescript", "c", "c++", "c#", "go", "rust",
+    "kotlin", "swift", "php", "ruby", "scala", "r", "matlab", "bash", "shell",
+    "html", "css", "sass", "scss", "xml", "json", "yaml",
+    # Frameworks & libraries
+    "react", "angular", "vue", "next.js", "nuxt", "svelte", "node.js", "express",
+    "django", "flask", "fastapi", "spring", "spring boot", "laravel", "rails",
+    "asp.net", ".net", "hibernate", "graphql", "redux", "tailwind",
+    # Databases
+    "mysql", "postgresql", "mongodb", "redis", "sqlite", "oracle", "cassandra",
+    "dynamodb", "elasticsearch", "neo4j", "mariadb", "firebase",
+    # Cloud & DevOps
+    "aws", "azure", "gcp", "docker", "kubernetes", "terraform", "ansible",
+    "jenkins", "github actions", "gitlab ci", "ci/cd", "linux", "nginx", "apache",
+    "prometheus", "grafana", "datadog", "splunk", "helm", "istio",
+    # ML / AI
+    "tensorflow", "pytorch", "keras", "scikit-learn", "pandas", "numpy",
+    "matplotlib", "opencv", "hugging face", "langchain", "llms", "nlp",
+    "computer vision", "deep learning", "machine learning", "mlops",
+    "data science", "statistics", "feature engineering", "data visualization",
+    # Tools & practices
+    "git", "github", "gitlab", "bitbucket", "jira", "confluence", "agile",
+    "scrum", "rest api", "rest apis", "graphql", "grpc", "microservices",
+    "system design", "oop", "data structures", "algorithms", "design patterns",
+    "tdd", "bdd", "unit testing", "selenium", "cypress", "jest", "pytest",
+    "postman", "swagger", "oauth", "jwt", "websockets", "kafka", "rabbitmq",
+    "airflow", "spark", "hadoop", "etl", "data warehousing", "tableau", "power bi",
+    "networking", "tcp/ip", "dns", "vpn", "firewall", "cryptography",
+    "penetration testing", "network security", "siem", "incident response",
+    "react native", "flutter", "android", "ios", "xcode",
+    "performance optimization", "caching", "load balancing", "api testing",
+    "bug tracking", "test planning", "code review", "architecture", "mentoring",
+    "leadership", "communication", "project management", "stakeholder management",
+    "roadmap planning", "user stories", "a/b testing", "data analysis",
 }
 
 
-# ─── IT validation (pure Python, no LLM) ─────────────────────────
+def validate_skills(skills: list) -> tuple:
+    """Accepts a skill if it fuzzy-matches anything in IT_SKILL_WHITELIST."""
+    for skill in skills:
+        sl = skill.lower().strip()
+        # Exact match
+        if sl in IT_SKILL_WHITELIST:
+            continue
+        # Substring match — e.g. "react.js" matches "react", "aws lambda" matches "aws"
+        if any(w in sl or sl in w for w in IT_SKILL_WHITELIST if len(w) >= 3):
+            continue
+        return False, f"'{skill}' is not a recognized IT skill. Please enter skills like Python, React, AWS, Docker, SQL, etc."
+    return True, ""
+
+
+# ─── IT validation (strict) ───────────────────────────────────────
 def validate_it_domain(current_role: str, target_role: str, skills: list) -> tuple:
-    def role_is_it(role: str) -> bool:
-        rl = role.lower()
+    ERROR_MSG = "UpNext only supports IT/technology roles. Please enter roles like Software Engineer, Data Scientist, DevOps Engineer, etc."
+
+    def is_blocked(role: str) -> bool:
+        rl = role.lower().strip()
+        if rl in NON_IT_ROLE_BLOCKLIST:
+            return True
+        words = set(rl.split())
+        return bool(words & NON_IT_ROLE_BLOCKLIST)
+
+    def is_it_role(role: str) -> bool:
+        rl = role.lower().strip()
+        if rl in IT_ROLE_ALLOWLIST:
+            return True
+        if is_blocked(rl):
+            return False
         return any(kw in rl for kw in IT_ROLE_KEYWORDS)
 
-    if role_is_it(current_role) or role_is_it(target_role):
-        return True, ""
+    if not is_it_role(target_role):
+        return False, ERROR_MSG
 
-    # Fallback: check if skills are clearly IT
+    if is_blocked(current_role) and not is_it_role(current_role):
+        return False, ERROR_MSG
+
+    # Validate each skill individually via LLM
+    skill_valid, skill_reason = validate_skills(skills)
+    if not skill_valid:
+        return False, skill_reason
+
+    # At least one IT skill must be present
+    IT_SKILL_KEYWORDS = {
+        "python", "java", "javascript", "typescript", "react", "angular",
+        "vue", "node", "sql", "mongodb", "aws", "azure", "gcp", "docker",
+        "kubernetes", "git", "linux", "html", "css", "machine learning",
+        "tensorflow", "pytorch", "spark", "terraform", "rest api",
+        "devops", "ci/cd", "microservices", "fastapi", "django", "flask",
+        "postgresql", "mysql", "redis", "kafka", "airflow", "selenium",
+        "system design", "algorithms", "data structures", "oop", "rest apis",
+        "typescript", "kotlin", "swift", "go", "rust", "c++", "c#", "php",
+    }
     skill_text = " ".join(s.lower() for s in skills)
-    if any(kw in skill_text for kw in IT_SKILL_KEYWORDS):
-        return True, ""
+    if not any(kw in skill_text for kw in IT_SKILL_KEYWORDS):
+        return False, "Please add at least one IT/technology skill (e.g., Python, JavaScript, AWS, Docker)."
 
-    return False, "Please enter IT/technology roles (e.g., Software Engineer, Data Scientist)"
+    return True, ""
 
 
 # ─── Skill gap calculation (pure Python + PostgreSQL) ────────────
@@ -307,7 +426,7 @@ def get_career_insights(target_role: str) -> dict:
         if key in rl:
             return data
     return {
-        "open_roles": 20000, "median_salary": "$110K", "demand_growth": "+20%",
+        "open_roles": 20000, "median_salary": "₹13 LPA", "demand_growth": "+20%",
         "top_skills": [
             {"skill": "Programming", "demand": 88}, {"skill": "System Design", "demand": 82},
             {"skill": "Cloud", "demand": 78}, {"skill": "Communication", "demand": 75},

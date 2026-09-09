@@ -1,0 +1,100 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+.ip_wrapper { display: flex; min-height: 100vh; background: #f1f0f7; }
+
+.ip_sidebar { width: 260px; min-height: 100vh; background: white; box-shadow: 2px 0 8px rgba(0,0,0,0.06); display: flex; flex-direction: column; position: fixed; left: 0; top: 0; z-index: 100; }
+.ip_logo { display: flex; align-items: center; gap: 10px; padding: 24px 20px 20px; font-size: 20px; font-weight: 800; color: #05051f; }
+.ip_bolt_icon { width: 36px; height: 36px; background: linear-gradient(135deg, #7c3aed, #3b82f6); border-radius: 10px; display: flex; align-items: center; justify-content: center; color: white; font-size: 16px; }
+.ip_nav { flex: 1; padding: 8px 12px; display: flex; flex-direction: column; gap: 2px; }
+.ip_nav_item { display: flex; align-items: center; gap: 12px; padding: 11px 14px; border-radius: 10px; font-size: 15px; font-weight: 500; color: #4b5563; cursor: pointer; transition: 0.2s; svg { font-size: 16px; } &:hover { background: #f9f7ff; color: #7c3aed; } &.active { background: #f3f0ff; color: #7c3aed; font-weight: 600; border-left: 3px solid #7c3aed; padding-left: 11px; } }
+.ip_logout { color: #ef4444 !important; &:hover { background: #fff5f5 !important; } }
+.ip_sidebar_foot { padding: 12px; border-top: 1px solid #f3f4f6; }
+.ip_user_row { display: flex; align-items: center; gap: 10px; padding: 12px 14px 8px; }
+.ip_avatar_sm { width: 36px; height: 36px; border-radius: 50%; background: #e0e7ff; color: #7c3aed; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 13px; &.purple { background: linear-gradient(135deg, #7c3aed, #3b82f6); color: white; } }
+.ip_user_name_text { font-size: 14px; font-weight: 600; color: #111827; }
+.ip_plan_text { font-size: 12px; color: #6b7280; }
+.ip_collapse_btn { position: absolute; right: -13px; top: 28px; width: 26px; height: 26px; border-radius: 50%; background: white; border: 1px solid #e5e7eb; color: #7c3aed; display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 11px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); z-index: 110; &:hover { background: #f3f0ff; } }
+.ip_sidebar.collapsed { width: 68px; .ip_logo { padding: 24px 16px 20px; justify-content: center; } .ip_nav { padding: 8px 10px; } .ip_nav_item { justify-content: center; padding: 12px; } .ip_nav_item.active { border-left: none; padding-left: 12px; } .ip_sidebar_foot { padding: 10px; } }
+
+.ip_main { margin-left: 260px; flex: 1; display: flex; flex-direction: column; min-height: 100vh; }
+.ip_main.collapsed { margin-left: 68px; }
+
+.ip_header { background: white; padding: 16px 28px; display: flex; align-items: center; gap: 16px; border-bottom: 1px solid #f3f4f6; position: sticky; top: 0; z-index: 50; }
+.ip_page_title { font-size: 22px; font-weight: 700; color: #111827; margin-right: auto; }
+.ip_search_box { display: flex; align-items: center; gap: 10px; background: #f9fafb; border: 1px solid #e5e7eb; border-radius: 12px; padding: 9px 16px; width: 240px; svg { color: #9ca3af; font-size: 14px; } input { border: none; outline: none; background: transparent; font-size: 14px; color: #374151; width: 100%; &::placeholder { color: #9ca3af; } } }
+.ip_header_right { display: flex; align-items: center; gap: 12px; }
+.ip_icon_btn { width: 36px; height: 36px; border-radius: 50%; background: #f9fafb; display: flex; align-items: center; justify-content: center; color: #6b7280; cursor: pointer; }
+
+.ip_content { padding: 24px 28px; display: flex; flex-direction: column; gap: 20px; }
+.ip_intro { display: flex; align-items: center; justify-content: space-between; h1 { font-size: 26px; font-weight: 800; color: #111827; } }
+.ip_intro_sub { font-size: 15px; color: #6b7280; margin-top: 4px; }
+.ip_progress_chip { display: flex; align-items: center; gap: 6px; background: #f0fdf4; color: #16a34a; border: 1px solid #bbf7d0; border-radius: 20px; padding: 6px 14px; font-size: 13px; font-weight: 600; }
+
+.ip_card { background: white; border-radius: 16px; padding: 24px; box-shadow: 0 2px 12px rgba(0,0,0,0.05); }
+
+.ip_prog_card { .ip_prog_row { display: flex; justify-content: space-between; font-size: 14px; font-weight: 500; color: #374151; margin-bottom: 8px; } .ip_prog_track { height: 8px; background: #f3f4f6; border-radius: 6px; } .ip_prog_fill { height: 100%; border-radius: 6px; background: linear-gradient(90deg, #7c3aed, #a855f7); transition: width 0.6s ease; } }
+
+.ip_practice_banner { display: flex; align-items: center; justify-content: space-between; background: linear-gradient(135deg, #f5f3ff, #eff6ff); h3 { font-size: 17px; font-weight: 700; color: #111827; margin-bottom: 4px; } p { font-size: 13px; color: #6b7280; } }
+.ip_practice_btn { padding: 10px 22px; background: linear-gradient(135deg, #7c3aed, #3b82f6); color: white; border: none; border-radius: 10px; font-size: 14px; font-weight: 700; cursor: pointer; white-space: nowrap; &:hover { opacity: 0.9; } }
+
+.ip_practice_card { background: linear-gradient(135deg, #f5f3ff, #eff6ff); }
+.ip_practice_header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px; }
+.ip_practice_label { font-size: 13px; font-weight: 600; color: #7c3aed; }
+.ip_exit_btn { padding: 6px 14px; background: white; border: 1px solid #e5e7eb; border-radius: 8px; font-size: 13px; color: #6b7280; cursor: pointer; &:hover { background: #f3f4f6; } }
+.ip_practice_q { font-size: 18px; font-weight: 700; color: #111827; line-height: 1.5; margin-bottom: 8px; }
+.ip_practice_cat { font-size: 12px; background: #ede9fe; color: #7c3aed; padding: 3px 10px; border-radius: 20px; font-weight: 600; }
+.ip_tip_box { background: white; border-left: 3px solid #7c3aed; padding: 12px 16px; border-radius: 0 10px 10px 0; margin-top: 14px; font-size: 14px; color: #374151; line-height: 1.5; }
+.ip_practice_actions { display: flex; gap: 10px; margin-top: 16px; }
+.ip_tip_btn { padding: 10px 18px; background: white; border: 1px solid #e5e7eb; border-radius: 10px; font-size: 14px; font-weight: 600; color: #7c3aed; cursor: pointer; &:hover { background: #f3f0ff; } }
+.ip_next_btn { padding: 10px 22px; background: linear-gradient(135deg, #7c3aed, #3b82f6); color: white; border: none; border-radius: 10px; font-size: 14px; font-weight: 700; cursor: pointer; &:hover { opacity: 0.9; } }
+.ip_practice_prog { height: 4px; background: #e5e7eb; border-radius: 4px; margin-top: 16px; }
+.ip_practice_fill { height: 100%; border-radius: 4px; background: linear-gradient(90deg, #7c3aed, #3b82f6); transition: width 0.4s ease; }
+
+.ip_tabs { display: flex; gap: 8px; }
+.ip_tab { padding: 10px 20px; border-radius: 10px; border: 1px solid #e5e7eb; background: white; font-size: 14px; font-weight: 600; color: #6b7280; cursor: pointer; transition: 0.2s; &:hover { background: #f9f7ff; color: #7c3aed; } &.active { background: #7c3aed; color: white; border-color: #7c3aed; } }
+
+.ip_question { border-bottom: 1px solid #f3f4f6; padding: 16px 0; &:last-child { border-bottom: none; } &.done .ip_q_text { color: #9ca3af; text-decoration: line-through; } }
+.ip_q_header { display: flex; align-items: center; justify-content: space-between; cursor: pointer; gap: 12px; }
+.ip_q_left { display: flex; align-items: flex-start; gap: 12px; flex: 1; }
+.ip_q_num { width: 26px; height: 26px; border-radius: 50%; background: #f3f0ff; color: #7c3aed; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+.ip_q_text { font-size: 15px; font-weight: 500; color: #111827; line-height: 1.4; }
+.ip_q_right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+.ip_cat_badge { font-size: 11px; font-weight: 700; padding: 3px 10px; border-radius: 20px; }
+.ip_cat_technical { background: #dbeafe; color: #2563eb; }
+.ip_cat_behavioral { background: #fef3c7; color: #d97706; }
+.ip_done_btn { width: 24px; height: 24px; border-radius: 50%; border: 2px solid #e5e7eb; display: flex; align-items: center; justify-content: center; cursor: pointer; color: transparent; font-size: 11px; transition: 0.2s; &:hover { border-color: #7c3aed; } &.checked { background: #7c3aed; border-color: #7c3aed; color: white; } }
+.ip_chevron { font-size: 12px; color: #9ca3af; }
+.ip_tip_reveal { background: #f9f7ff; border-left: 3px solid #7c3aed; padding: 12px 16px; border-radius: 0 10px 10px 0; margin-top: 12px; font-size: 14px; color: #374151; line-height: 1.5; p { margin-top: 6px; } }
+
+.ip_reset_btn { display: flex; align-items: center; gap: 8px; padding: 10px 20px; background: white; border: 1px solid #e5e7eb; border-radius: 10px; font-size: 14px; font-weight: 600; color: #6b7280; cursor: pointer; align-self: flex-start; &:hover { background: #fef2f2; color: #ef4444; border-color: #fecaca; } }
+
+.ip_wrapper.dark {
+  background: #0d0d1a;
+  .ip_sidebar { background: #13131f; border-right: 1px solid #1e1e30; }
+  .ip_logo { color: #e5e7eb; }
+  .ip_nav_item { color: #9ca3af; &:hover { background: #1e1e30; color: #a78bfa; } &.active { background: #1e1e30; color: #a78bfa; border-left-color: #7c3aed; } }
+  .ip_sidebar_foot { border-top-color: #1e1e30; }
+  .ip_user_name_text { color: #e5e7eb; }
+  .ip_header { background: #13131f; border-bottom-color: #1e1e30; }
+  .ip_page_title { color: #e5e7eb; }
+  .ip_search_box { background: #1e1e30; border-color: #2a2a40; input { color: #e5e7eb; } }
+  .ip_icon_btn { background: #1e1e30; color: #9ca3af; }
+  .ip_card { background: #13131f; }
+  .ip_intro h1 { color: #e5e7eb; }
+  .ip_q_text { color: #d1d5db; }
+  .ip_question { border-bottom-color: #1e1e30; }
+  .ip_practice_banner { background: linear-gradient(135deg, #1a1a30, #0f1a30); h3 { color: #e5e7eb; } }
+  .ip_practice_card { background: linear-gradient(135deg, #1a1a30, #0f1a30); }
+  .ip_practice_q { color: #e5e7eb; }
+  .ip_tip_box { background: #1e1e30; color: #d1d5db; }
+  .ip_tip_reveal { background: #1a1a30; color: #d1d5db; }
+  .ip_exit_btn { background: #1e1e30; border-color: #2a2a40; color: #9ca3af; }
+  .ip_tab { background: #13131f; border-color: #2a2a40; color: #9ca3af; &.active { background: #7c3aed; color: white; } }
+  .ip_prog_track { background: #1e1e30; }
+  .ip_reset_btn { background: #13131f; border-color: #2a2a40; color: #9ca3af; }
+  .ip_collapse_btn { background: #13131f; border-color: #2a2a40; color: #a78bfa; }
+}
+
+.ip_loading { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 14px; padding: 48px; color: #6b7280; font-size: 14px; }
+.ip_spinner { width: 36px; height: 36px; border: 3px solid #e5e7eb; border-top-color: #7c3aed; border-radius: 50%; animation: ip_spin 0.8s linear infinite; }
+@keyframes ip_spin { to { transform: rotate(360deg); } }

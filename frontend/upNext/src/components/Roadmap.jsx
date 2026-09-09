@@ -93,11 +93,11 @@ function Roadmap() {
     { icon: <FaThLarge />, label: "Dashboard", path: "/dashboard" },
     { icon: <FaBrain />, label: "Skill Gap Analysis", path: "/skill-gap" },
     { icon: <FaMap />, label: "Roadmap", path: "/roadmap", active: true },
-    { icon: <FaFolder />, label: "Projects", path: null },
-    { icon: <FaFileAlt />, label: "Resume Analyzer", path: null },
-    { icon: <FaMicrophone />, label: "Interview Prep", path: null },
-    { icon: <FaChartLine />, label: "Career Insights", path: null },
-    { icon: <FaUser />, label: "Profile", path: null },
+    { icon: <FaFolder />, label: "Projects", path: "/projects" },
+    { icon: <FaFileAlt />, label: "Resume Analyzer", path: "/resume" },
+    { icon: <FaMicrophone />, label: "Interview Prep", path: "/interview" },
+    { icon: <FaChartLine />, label: "Career Insights", path: "/career-insights" },
+    { icon: <FaUser />, label: "Profile", path: "/profile" },
   ];
 
   if (loading) {
@@ -208,7 +208,7 @@ function Roadmap() {
               <div className="rm_avatar_sm">{getInitials(data.user_name)}</div>
               <div>
                 <p className="rm_user_name_text">{data.user_name}</p>
-                <p className="rm_plan_text">Pro Plan</p>
+
               </div>
             </div>
           )}

@@ -148,11 +148,11 @@ function SkillGapAnalysis() {
     { icon: <FaThLarge />, label: "Dashboard", path: "/dashboard" },
     { icon: <FaBrain />, label: "Skill Gap Analysis", path: "/skill-gap", active: true },
     { icon: <FaMap />, label: "Roadmap", path: "/roadmap" },
-    { icon: <FaFolder />, label: "Projects", path: null },
-    { icon: <FaFileAlt />, label: "Resume Analyzer", path: null },
-    { icon: <FaMicrophone />, label: "Interview Prep", path: null },
-    { icon: <FaChartLine />, label: "Career Insights", path: null },
-    { icon: <FaUser />, label: "Profile", path: null },
+    { icon: <FaFolder />, label: "Projects", path: "/projects" },
+    { icon: <FaFileAlt />, label: "Resume Analyzer", path: "/resume" },
+    { icon: <FaMicrophone />, label: "Interview Prep", path: "/interview" },
+    { icon: <FaChartLine />, label: "Career Insights", path: "/career-insights" },
+    { icon: <FaUser />, label: "Profile", path: "/profile" },
   ];
 
   if (loading) {
@@ -217,7 +217,7 @@ function SkillGapAnalysis() {
               <div className="sg_avatar_sm">{getInitials(user_name)}</div>
               <div>
                 <p className="sg_user_name_text">{user_name}</p>
-                <p className="sg_plan_text">Pro Plan</p>
+
               </div>
             </div>
           )}

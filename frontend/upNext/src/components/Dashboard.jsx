@@ -69,11 +69,11 @@ function Dashboard() {
     { icon: <FaThLarge />, label: "Dashboard", path: "/dashboard", active: true },
     { icon: <FaBrain />, label: "Skill Gap Analysis", path: "/skill-gap" },
     { icon: <FaMap />, label: "Roadmap", path: "/roadmap" },
-    { icon: <FaFolder />, label: "Projects", path: null },
-    { icon: <FaFileAlt />, label: "Resume Analyzer", path: null },
-    { icon: <FaMicrophone />, label: "Interview Prep", path: null },
-    { icon: <FaChartLine />, label: "Career Insights", path: null },
-    { icon: <FaUser />, label: "Profile", path: null },
+    { icon: <FaFolder />, label: "Projects", path: "/projects" },
+    { icon: <FaFileAlt />, label: "Resume Analyzer", path: "/resume" },
+    { icon: <FaMicrophone />, label: "Interview Prep", path: "/interview" },
+    { icon: <FaChartLine />, label: "Career Insights", path: "/career-insights" },
+    { icon: <FaUser />, label: "Profile", path: "/profile" },
   ];
 
   return (
@@ -113,7 +113,7 @@ function Dashboard() {
               <div className="db_avatar_sm">{getInitials(data.user_name)}</div>
               <div>
                 <p className="db_user_name_text">{data.user_name}</p>
-                <p className="db_plan_text">Pro Plan</p>
+
               </div>
             </div>
           )}
@@ -257,7 +257,7 @@ function Dashboard() {
                 <h3>Career Insights</h3>
                 <p>{data.target_role} market · {new Date().toLocaleString("default", { month: "short", year: "numeric" })}</p>
               </div>
-              <span className="db_link purple_text">Full insights ›</span>
+              <span className="db_link purple_text" style={{cursor:"pointer"}} onClick={() => navigate("/career-insights")}>Full insights ›</span>
             </div>
 
             <div className="db_stats_grid">
