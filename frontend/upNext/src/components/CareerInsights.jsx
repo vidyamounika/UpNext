@@ -128,7 +128,7 @@ function CareerInsights() {
     { icon: <FaFileAlt />, label: "Resume Analyzer", path: "/resume" },
     { icon: <FaMicrophone />, label: "Interview Prep", path: "/interview" },
     { icon: <FaChartLine />, label: "Career Insights", path: "/career-insights", active: true },
-    { icon: <FaUser />, label: "Profile", path: null },
+    { icon: <FaUser />, label: "Profile", path: "/profile" },
   ];
 
   if (loading) {
