@@ -67,6 +67,51 @@
 .pr_spinner { width: 36px; height: 36px; border: 3px solid #e5e7eb; border-top-color: #7c3aed; border-radius: 50%; animation: pr_spin 0.8s linear infinite; }
 @keyframes pr_spin { to { transform: rotate(360deg); } }
 
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .pr_sidebar { display: none; }
+  .pr_main { margin-left: 0; }
+  .pr_main.collapsed { margin-left: 0; }
+  .pr_grid { grid-template-columns: 1fr; }
+}
+
+/* ── Tablet (481px – 900px) ── */
+@media (min-width: 481px) and (max-width: 900px) {
+  .pr_content { padding: 16px 18px; }
+  .pr_header { padding: 12px 18px; }
+  .pr_search_box { width: 180px; }
+  .pr_card { padding: 18px; }
+  .pr_hero_card { gap: 16px; }
+}
+
+/* ── Mobile (≤ 480px) ── */
+@media (max-width: 480px) {
+  .pr_header { padding: 10px 14px; flex-wrap: wrap; gap: 10px; }
+  .pr_search_box { display: none; }
+  .pr_page_title { font-size: 17px; }
+  .pr_content { padding: 12px 14px; gap: 14px; max-width: 100%; }
+  .pr_card { padding: 16px; border-radius: 12px; }
+  .pr_hero_card { flex-direction: column; gap: 14px; }
+  .pr_avatar_lg { width: 56px; height: 56px; font-size: 20px; }
+  .pr_hero_name { font-size: 18px; }
+  .pr_grid { grid-template-columns: 1fr; }
+  .pr_card_title { font-size: 14px; }
+  .pr_info_label, .pr_info_value { font-size: 12px; }
+}
+
+/* ── Large screens (≥ 1400px) ── */
+@media (min-width: 1400px) {
+  .pr_sidebar { width: 280px; }
+  .pr_main { margin-left: 280px; }
+  .pr_main.collapsed { margin-left: 68px; }
+  .pr_content { padding: 28px 36px; max-width: 1000px; }
+  .pr_card { padding: 28px; }
+  .pr_hero_name { font-size: 26px; }
+  .pr_card_title { font-size: 18px; }
+  .pr_info_label, .pr_info_value { font-size: 15px; }
+  .pr_avatar_lg { width: 88px; height: 88px; font-size: 32px; }
+}
+
 .pr_wrapper.dark {
   background: #0d0d1a;
   .pr_sidebar { background: #13131f; border-right: 1px solid #1e1e30; }

@@ -523,6 +523,7 @@ body {
 
 /* RESPONSIVE */
 
+/* ── Tablet (481px – 900px) ── */
 @media (max-width: 900px) {
     .main_content {
         .navbar {
@@ -537,49 +538,147 @@ body {
                 gap: 18px;
                 flex-wrap: wrap;
 
-                p {
-                    font-size: 18px;
-                }
+                p { font-size: 18px; }
             }
 
-            .auth_btns {
-                button {
-                    font-size: 15px;
-                    padding: 10px 16px;
-                }
+            .auth_btns button {
+                font-size: 15px;
+                padding: 10px 16px;
             }
         }
 
         .hero_section h1,
         .features_section h2,
         .how_it_works_section h2,
-        .cta_box h2 {
-            font-size: 42px;
-        }
+        .cta_box h2 { font-size: 42px; }
 
         .hero_section p,
         .section_description,
-        .cta_box p {
-            font-size: 20px;
-        }
+        .cta_box p { font-size: 20px; }
 
-        .hero_buttons {
-            flex-direction: column;
-        }
+        .hero_buttons { flex-direction: column; }
 
         .features_grid,
-        .steps_container {
-            grid-template-columns: 1fr;
-        }
+        .steps_container { grid-template-columns: 1fr; }
 
-        .cta_section {
-            padding: 40px 20px 90px;
-        }
+        .cta_section { padding: 40px 20px 90px; }
 
         .footer {
             flex-direction: column;
             gap: 18px;
             text-align: center;
         }
+    }
+}
+
+/* ── Mobile (≤ 480px) ── */
+@media (max-width: 480px) {
+    .main_content {
+        .navbar {
+            padding: 14px;
+            gap: 10px;
+
+            .logo img { width: 120px; }
+
+            .navLinks {
+                gap: 12px;
+                p { font-size: 15px; }
+            }
+
+            .auth_btns {
+                gap: 8px;
+                button {
+                    font-size: 13px;
+                    padding: 8px 12px;
+                }
+            }
+        }
+
+        .hero_section {
+            padding: 40px 16px;
+        }
+
+        .hero_section h1,
+        .features_section h2,
+        .how_it_works_section h2,
+        .cta_box h2 { font-size: 28px; }
+
+        .hero_section p,
+        .section_description,
+        .cta_box p { font-size: 16px; }
+
+        .badge { font-size: 13px; padding: 8px 18px; margin-bottom: 28px; }
+
+        .start_btn,
+        .demo_btn {
+            padding: 14px 28px;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        .features_section { padding: 50px 16px 60px; }
+
+        .feature_card {
+            padding: 22px;
+            min-height: auto;
+            h3 { font-size: 20px; }
+            p { font-size: 16px; }
+        }
+
+        .how_it_works_section { padding: 60px 16px; }
+
+        .step_card {
+            h1 { font-size: 60px; }
+            h3 { font-size: 20px; }
+            p { font-size: 16px; }
+        }
+
+        .cta_box {
+            padding: 40px 20px;
+            border-radius: 20px;
+            button {
+                padding: 16px 36px;
+                font-size: 18px;
+            }
+        }
+
+        .footer {
+            padding: 20px 16px;
+            p { font-size: 14px; }
+        }
+    }
+}
+
+/* ── Large screens (≥ 1400px) ── */
+@media (min-width: 1400px) {
+    .main_content {
+        .navbar {
+            padding: 0 60px;
+            .navLinks p { font-size: 18px; }
+            .auth_btns button { font-size: 16px; padding: 12px 24px; }
+        }
+
+        .hero_section h1 { font-size: 72px; }
+        .hero_section p { font-size: 22px; }
+
+        .features_section h2,
+        .how_it_works_section h2,
+        .cta_box h2 { font-size: 64px; }
+
+        .section_description { font-size: 20px; }
+
+        .feature_card {
+            h3 { font-size: 24px; }
+            p { font-size: 18px; }
+        }
+
+        .step_card {
+            h3 { font-size: 24px; }
+            p { font-size: 18px; }
+        }
+
+        .features_grid { max-width: 1400px; }
+        .steps_container { max-width: 1400px; }
+        .cta_box { max-width: 1300px; }
     }
 }

@@ -224,35 +224,30 @@ label {
 }
 
 @media (max-width: 768px) {
-  .signup_container {
-    padding: 10px;
-  }
+  .signup_container { padding: 10px; }
+  .signup_card { max-width: 100%; padding: 20px; }
+  h1 { font-size: 26px; }
+  .subtitle { font-size: 14px; }
+  .input_box { height: 44px; }
+  .create_btn { height: 46px; font-size: 16px; }
+  .success_box { right: 12px; left: 12px; text-align: center; }
+}
 
-  .signup_card {
-    max-width: 100%;
-    padding: 20px;
-  }
+/* ── Mobile (≤ 480px) ── */
+@media (max-width: 480px) {
+  .signup_container { padding: 8px; }
+  .signup_card { padding: 18px 14px; border-radius: 16px; }
+  h1 { font-size: 22px; }
+  .subtitle { font-size: 13px; margin-bottom: 14px; }
+  .input_box { height: 42px; padding: 0 12px; }
+  .create_btn { height: 44px; font-size: 15px; }
+  .success_box, .error_box { right: 10px; left: 10px; text-align: center; font-size: 13px; }
+}
 
-  h1 {
-    font-size: 26px;
-  }
-
-  .subtitle {
-    font-size: 14px;
-  }
-
-  .input_box {
-    height: 44px;
-  }
-
-  .create_btn {
-    height: 46px;
-    font-size: 16px;
-  }
-
-  .success_box {
-    right: 12px;
-    left: 12px;
-    text-align: center;
-  }
+/* ── Large screens (≥ 1400px) ── */
+@media (min-width: 1400px) {
+  .signup_card { max-width: 600px; padding: 36px; }
+  h1 { font-size: 34px; }
+  .input_box { height: 54px; }
+  .create_btn { height: 54px; font-size: 19px; }
 }

@@ -879,3 +879,58 @@
   .db_hero_right { align-items: flex-start; }
   .db_stats_grid { grid-template-columns: 1fr; }
 }
+
+/* ── Tablet (481px – 900px) ── */
+@media (min-width: 481px) and (max-width: 900px) {
+  .db_content { padding: 16px 18px; }
+  .db_header { padding: 12px 18px; }
+  .db_search_box { width: 180px; }
+  .db_hero { padding: 22px 20px; }
+  .db_hero_left h1 { font-size: 22px; }
+  .db_stats_grid { grid-template-columns: repeat(2, 1fr); }
+  .db_card { padding: 18px; }
+}
+
+/* ── Mobile (≤ 480px) ── */
+@media (max-width: 480px) {
+  .db_header {
+    padding: 10px 14px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .db_search_box { display: none; }
+  .db_page_title { font-size: 17px; }
+  .db_content { padding: 12px 14px; gap: 14px; }
+  .db_hero {
+    padding: 18px 16px;
+    border-radius: 14px;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .db_hero_left h1 { font-size: 20px; }
+  .db_hero_sub { font-size: 13px; }
+  .db_hero_right { align-items: flex-start; }
+  .db_readiness_group { gap: 10px; }
+  .db_stats_grid { grid-template-columns: 1fr 1fr; gap: 8px; }
+  .db_stat_val { font-size: 18px; }
+  .db_card { padding: 16px; border-radius: 12px; }
+  .db_card_head h3 { font-size: 15px; }
+  .db_badges_row { gap: 10px; }
+  .db_badge_circle { width: 40px; height: 40px; font-size: 15px; }
+  .db_rm_phase_step .db_rm_phase_circle { width: 32px; height: 32px; font-size: 12px; }
+}
+
+/* ── Large screens (≥ 1400px) ── */
+@media (min-width: 1400px) {
+  .db_sidebar { width: 280px; }
+  .db_main { margin-left: 280px; }
+  .db_main.collapsed { margin-left: 68px; }
+  .db_content { padding: 28px 36px; max-width: 1300px; }
+  .db_hero { padding: 40px 44px; }
+  .db_hero_left h1 { font-size: 36px; }
+  .db_hero_sub { font-size: 16px; }
+  .db_stats_grid { grid-template-columns: repeat(3, 1fr); }
+  .db_stat_val { font-size: 26px; }
+  .db_card { padding: 28px; }
+  .db_card_head h3 { font-size: 19px; }
+}

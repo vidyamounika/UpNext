@@ -677,48 +677,65 @@ label {
     max-width: 100%;
     padding: 22px;
 
-    h1 {
-      font-size: 24px;
-    }
+    h1 { font-size: 24px; }
 
-    input,
-    select {
+    input, select {
       height: 48px;
       font-size: 14px;
     }
   }
 
-  .stepper {
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-bottom: 24px;
-  }
-
-  .step_line {
-    width: 24px;
-  }
-
-  .step_item p {
-    font-size: 13px;
-  }
-
-  .btn_row {
-    grid-template-columns: 1fr;
-  }
-
+  .stepper { flex-wrap: wrap; gap: 8px; margin-bottom: 24px; }
+  .step_line { width: 24px; }
+  .step_item p { font-size: 13px; }
+  .btn_row { grid-template-columns: 1fr; }
   .custom_skill_box {
     flex-direction: column;
+    button { width: 100%; height: 48px; }
+  }
+  .success_box, .error_box { left: 12px; right: 12px; text-align: center; }
+}
 
-    button {
-      width: 100%;
-      height: 48px;
-    }
+/* ── Mobile (≤ 480px) ── */
+@media (max-width: 480px) {
+  .login_card {
+    padding: 22px 18px;
+    border-radius: 18px;
   }
 
-  .success_box,
-  .error_box {
-    left: 12px;
-    right: 12px;
-    text-align: center;
+  h1 { font-size: 26px; }
+  .subtitle { font-size: 13px; }
+
+  .input_box {
+    height: 46px;
+    padding: 0 12px;
   }
+
+  .login_btn {
+    height: 46px;
+    font-size: 16px;
+  }
+
+  .onboarding_card {
+    padding: 18px;
+    border-radius: 16px;
+    h1 { font-size: 22px; }
+    input, select { height: 44px; font-size: 13px; }
+  }
+
+  .stepper { gap: 6px; }
+  .step_item p { display: none; }
+  .step_line { width: 18px; }
+
+  .skill_chip { font-size: 13px; padding: 6px 12px; }
+  .primary_btn, .secondary_btn { height: 46px; font-size: 15px; }
+}
+
+/* ── Large screens (≥ 1400px) ── */
+@media (min-width: 1400px) {
+  .login_card { max-width: 560px; padding: 40px; }
+  h1 { font-size: 36px; }
+  .input_box { height: 56px; }
+  .login_btn { height: 56px; font-size: 20px; }
+  .onboarding_card { max-width: 700px; padding: 40px; h1 { font-size: 32px; } }
 }

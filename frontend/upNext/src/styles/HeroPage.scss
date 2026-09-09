@@ -257,3 +257,76 @@
     transform: translateY(0);
   }
 }
+
+/* ── Tablet (481px – 768px) ── */
+@media (min-width: 481px) and (max-width: 768px) {
+  .upnext-logo {
+    font-size: 5rem;
+    letter-spacing: -2px;
+  }
+
+  .arrow {
+    font-size: 2.6rem;
+    top: -30px;
+    right: 52px;
+  }
+
+  .tagline {
+    font-size: 1rem;
+    margin-top: 20px;
+  }
+
+  .start-btn {
+    padding: 14px 32px;
+    font-size: 16px;
+    margin-top: 28px;
+  }
+
+  .circle1 { width: 220px; height: 220px; }
+  .circle2 { width: 180px; height: 180px; }
+  .circle3 { width: 160px; height: 160px; }
+}
+
+/* ── Mobile (≤ 480px) ── */
+@media (max-width: 480px) {
+  .hero-content {
+    padding: 16px;
+  }
+
+  .upnext-logo {
+    font-size: 3.6rem;
+    letter-spacing: -1px;
+  }
+
+  .arrow {
+    font-size: 2rem;
+    top: -22px;
+    right: 36px;
+  }
+
+  .tagline {
+    font-size: 0.9rem;
+    margin-top: 16px;
+    line-height: 1.6;
+  }
+
+  .start-btn {
+    padding: 12px 28px;
+    font-size: 15px;
+    margin-top: 22px;
+  }
+
+  .circle1 { width: 160px; height: 160px; left: -60px; }
+  .circle2 { width: 140px; height: 140px; right: -50px; }
+  .circle3 { width: 120px; height: 120px; }
+
+  .floating-icons div { font-size: 1.4rem; }
+}
+
+/* ── Large screens (≥ 1400px) ── */
+@media (min-width: 1400px) {
+  .upnext-logo { font-size: 9rem; }
+  .arrow { font-size: 4rem; top: -48px; right: 88px; }
+  .tagline { font-size: 1.4rem; }
+  .start-btn { padding: 22px 52px; font-size: 20px; }
+}

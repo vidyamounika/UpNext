@@ -604,3 +604,45 @@
   .sg_priorities { grid-template-columns: 1fr; }
   .sg_matrix { grid-template-columns: 1fr; }
 }
+
+/* ── Tablet (481px – 900px) ── */
+@media (min-width: 481px) and (max-width: 900px) {
+  .sg_content { padding: 16px 18px; }
+  .sg_header { padding: 12px 18px; }
+  .sg_search_box { width: 180px; }
+  .sg_card { padding: 18px; }
+  .sg_priorities { grid-template-columns: repeat(2, 1fr); }
+  .sg_radar_svg { width: 260px; height: 260px; }
+}
+
+/* ── Mobile (≤ 480px) ── */
+@media (max-width: 480px) {
+  .sg_header {
+    padding: 10px 14px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .sg_search_box { display: none; }
+  .sg_page_title { font-size: 17px; }
+  .sg_content { padding: 12px 14px; gap: 14px; max-width: 100%; }
+  .sg_intro h1 { font-size: 22px; }
+  .sg_card { padding: 16px; border-radius: 12px; }
+  .sg_section_title { font-size: 15px; }
+  .sg_radar_svg { width: 220px; height: 220px; }
+  .sg_priorities { grid-template-columns: 1fr; }
+  .sg_matrix { grid-template-columns: 1fr; }
+  .sg_missing_row { padding: 10px 12px; }
+  .sg_ai_head { flex-direction: column; gap: 10px; }
+}
+
+/* ── Large screens (≥ 1400px) ── */
+@media (min-width: 1400px) {
+  .sg_sidebar { width: 280px; }
+  .sg_main { margin-left: 280px; }
+  .sg_main.collapsed { margin-left: 68px; }
+  .sg_content { padding: 28px 36px; max-width: 1100px; }
+  .sg_card { padding: 28px; }
+  .sg_section_title { font-size: 19px; }
+  .sg_priorities { grid-template-columns: repeat(3, 1fr); }
+  .sg_radar_svg { width: 340px; height: 340px; }
+}

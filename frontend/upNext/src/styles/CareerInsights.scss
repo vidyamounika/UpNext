@@ -80,6 +80,57 @@
 
 .ci_footer_note { display: flex; align-items: center; gap: 6px; font-size: 12px; color: #9ca3af; padding-bottom: 8px; }
 
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .ci_sidebar { display: none; }
+  .ci_main { margin-left: 0; }
+  .ci_main.collapsed { margin-left: 0; }
+  .ci_job_types { grid-template-columns: 1fr 1fr; }
+}
+
+/* ── Tablet (481px – 900px) ── */
+@media (min-width: 481px) and (max-width: 900px) {
+  .ci_content { padding: 16px 18px; }
+  .ci_header { padding: 12px 18px; }
+  .ci_search_box { width: 180px; }
+  .ci_card { padding: 18px; }
+  .ci_stats_row { grid-template-columns: repeat(2, 1fr); }
+  .ci_certs { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ── Mobile (≤ 480px) ── */
+@media (max-width: 480px) {
+  .ci_header { padding: 10px 14px; flex-wrap: wrap; gap: 10px; }
+  .ci_search_box { display: none; }
+  .ci_page_title { font-size: 17px; }
+  .ci_content { padding: 12px 14px; gap: 14px; }
+  .ci_intro h1 { font-size: 22px; }
+  .ci_card { padding: 16px; border-radius: 12px; }
+  .ci_section_title { font-size: 15px; }
+  .ci_stats_row { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .ci_stat_val { font-size: 18px; }
+  .ci_job_types { grid-template-columns: 1fr; }
+  .ci_certs { grid-template-columns: 1fr; }
+  .ci_trend_chart { gap: 6px; }
+  .ci_trend_bar_wrap { height: 90px; }
+  .ci_companies { gap: 8px; }
+  .ci_company_chip { font-size: 12px; padding: 6px 12px; }
+}
+
+/* ── Large screens (≥ 1400px) ── */
+@media (min-width: 1400px) {
+  .ci_sidebar { width: 280px; }
+  .ci_main { margin-left: 280px; }
+  .ci_main.collapsed { margin-left: 68px; }
+  .ci_content { padding: 28px 36px; }
+  .ci_card { padding: 28px; }
+  .ci_section_title { font-size: 18px; }
+  .ci_stat_val { font-size: 26px; }
+  .ci_stats_row { grid-template-columns: repeat(4, 1fr); }
+  .ci_certs { grid-template-columns: repeat(3, 1fr); }
+  .ci_trend_bar_wrap { height: 160px; }
+}
+
 .ci_wrapper.dark {
   background: #0d0d1a;
   .ci_sidebar { background: #13131f; border-right: 1px solid #1e1e30; }
