@@ -7,6 +7,7 @@ import {
 } from "react-icons/fa";
 import axios from "axios";
 import API_BASE from "../api";
+import "../styles/SkillGapAnalysis.scss";
 
 // ── Helper: 5-dot skill level indicator ─────────────────────────
 function SkillDots({ level }) {

@@ -7,6 +7,7 @@ import {
   FaSun, FaGlobeAmericas, FaArrowUp, FaBriefcase, FaRupeeSign
 } from "react-icons/fa";
 import API_BASE from "../api";
+import "../styles/CareerInsights.scss";
 
 function getInitials(name) {
   return name ? name.split(" ").map(n => n[0]).join("").toUpperCase().slice(0, 2) : "U";

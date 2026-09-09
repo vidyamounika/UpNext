@@ -513,6 +513,7 @@ def build_dashboard_data(full_name, current_role, target_role,
 
     return {
         "user_name": first_name,
+        "full_name": full_name,
         "target_role": target_role,
         "streak_days": 1,
         "overall_readiness": readiness,

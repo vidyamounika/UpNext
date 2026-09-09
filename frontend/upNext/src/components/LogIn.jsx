@@ -113,8 +113,8 @@ function Login() {
         const response = await axios.post(`${API_BASE}/login`, { email, password });
         setDbWaking(false);
         if (response.data.message === "Login Successful") {
+          localStorage.setItem("upnext_email", email);
           if (response.data.onboarding_complete) {
-            localStorage.setItem("upnext_email", email);
             navigate("/dashboard");
           } else {
             setIsLoggedIn(true);

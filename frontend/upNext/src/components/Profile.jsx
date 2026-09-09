@@ -7,6 +7,7 @@ import {
   FaSun, FaEdit, FaCheck, FaTimes
 } from "react-icons/fa";
 import API_BASE from "../api";
+import "../styles/Profile.scss";
 
 function getInitials(name) {
   return name ? name.split(" ").map(n => n[0]).join("").toUpperCase().slice(0, 2) : "U";
@@ -32,14 +33,14 @@ function Profile() {
       .then(r => r.json())
       .then(d => {
         setProfile({
-          name: d.user_name || "",
+          name: d.full_name || d.user_name || "",
           email,
           currentRole: d.current_role || "",
           targetRole: d.target_role || "",
           experience: d.experience || "",
           timeline: d.roadmap?.plan_duration || "",
           goal: d.primary_goal || "",
-          skills: (d.skill_gap?.skills || []).map(s => s.name || s),
+          skills: (d.skill_gap?.skills || []).filter(s => s.user_level > 0).map(s => s.name || s),
         });
         setLoading(false);
       })
