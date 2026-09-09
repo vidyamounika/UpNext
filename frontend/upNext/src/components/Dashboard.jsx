@@ -9,6 +9,7 @@ import {
 } from "react-icons/fa";
 import { MdShield } from "react-icons/md";
 import axios from "axios";
+import API_BASE from "../api";
 import "../styles/Dashboard.scss";
 
 function Dashboard() {
@@ -20,7 +21,7 @@ function Dashboard() {
   useEffect(() => {
     const email = localStorage.getItem("upnext_email");
     if (!email) { navigate("/login"); return; }
-    axios.get(`http://127.0.0.1:8000/dashboard-data?email=${encodeURIComponent(email)}`)
+    axios.get(`${API_BASE}/dashboard-data?email=${encodeURIComponent(email)}`)
       .then(res => setData(res.data))
       .catch(err => console.error(err))
       .finally(() => setLoading(false));

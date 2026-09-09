@@ -7,6 +7,7 @@ import {
   FaSun, FaCheck, FaSync
 } from "react-icons/fa";
 import axios from "axios";
+import API_BASE from "../api";
 import "../styles/Roadmap.scss";
 
 function getInitials(name) {
@@ -26,7 +27,7 @@ function Roadmap() {
 
   const fetchData = async (email) => {
     try {
-      const res = await axios.get(`http://127.0.0.1:8000/roadmap-data?email=${encodeURIComponent(email)}`);
+      const res = await axios.get(`${API_BASE}/roadmap-data?email=${encodeURIComponent(email)}`);
       setData(res.data);
     } catch (err) {
       console.error(err);
@@ -34,7 +35,7 @@ function Roadmap() {
   };
 
   const saveProgressToDB = (email, tasks, totalCount) => {
-    axios.post("http://127.0.0.1:8000/roadmap-progress", {
+    axios.post(`${API_BASE}/roadmap-progress`, {
       email,
       tasks,
       total_tasks: totalCount,
@@ -46,8 +47,8 @@ function Roadmap() {
     if (!email) { navigate("/login"); return; }
 
     Promise.all([
-      axios.get(`http://127.0.0.1:8000/roadmap-data?email=${encodeURIComponent(email)}`),
-      axios.get(`http://127.0.0.1:8000/roadmap-progress?email=${encodeURIComponent(email)}`),
+      axios.get(`${API_BASE}/roadmap-data?email=${encodeURIComponent(email)}`),
+      axios.get(`${API_BASE}/roadmap-progress?email=${encodeURIComponent(email)}`),
     ])
       .then(([roadmapRes, progressRes]) => {
         setData(roadmapRes.data);

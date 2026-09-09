@@ -6,7 +6,7 @@ import {
   FaBell, FaSearch, FaThLarge, FaChevronLeft, FaChevronRight,
   FaSun, FaEdit, FaCheck, FaTimes
 } from "react-icons/fa";
-import "../styles/Profile.scss";
+import API_BASE from "../api";
 
 function getInitials(name) {
   return name ? name.split(" ").map(n => n[0]).join("").toUpperCase().slice(0, 2) : "U";
@@ -28,7 +28,7 @@ function Profile() {
   useEffect(() => {
     const email = localStorage.getItem("upnext_email");
     if (!email) { navigate("/login"); return; }
-    fetch(`http://127.0.0.1:8000/dashboard-data?email=${encodeURIComponent(email)}`)
+    fetch(`${API_BASE}/dashboard-data?email=${encodeURIComponent(email)}`)
       .then(r => r.json())
       .then(d => {
         setProfile({
@@ -57,7 +57,7 @@ function Profile() {
       setPwMsg({ text: "New passwords do not match.", ok: false }); return;
     }
     try {
-      const res = await fetch("http://127.0.0.1:8000/reset-password", {
+      const res = await fetch(`${API_BASE}/reset-password`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email: profile.email, new_password: pwForm.newPw }),

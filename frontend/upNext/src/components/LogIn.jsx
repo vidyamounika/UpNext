@@ -15,6 +15,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import UpNext_logo from "../assets/UpNext_logo.png";
 import "../styles/LogIn.scss";
 import axios from "axios";
+import API_BASE from "../api";
 
 function Login() {
   const navigate = useNavigate();
@@ -109,7 +110,7 @@ function Login() {
     setDbWaking(false);
     const attemptLogin = async (retriesLeft) => {
       try {
-        const response = await axios.post("http://127.0.0.1:8000/login", { email, password });
+        const response = await axios.post(`${API_BASE}/login`, { email, password });
         setDbWaking(false);
         if (response.data.message === "Login Successful") {
           if (response.data.onboarding_complete) {
@@ -221,7 +222,7 @@ function Login() {
 
     setIsLaunching(true);
     try {
-      await axios.post("http://127.0.0.1:8000/save-onboarding", {
+      await axios.post(`${API_BASE}/save-onboarding`, {
         email,
         current_role: currentRole,
         experience,

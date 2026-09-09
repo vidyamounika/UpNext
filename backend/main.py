@@ -594,7 +594,7 @@ app = FastAPI()
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://upnext-api-m7ix.onrender.com"],
+    allow_origins=["https://up-next-nu.vercel.app", "http://localhost:5173"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],

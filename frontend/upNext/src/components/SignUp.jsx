@@ -11,6 +11,7 @@ import { useNavigate } from "react-router-dom";
 import UpNext_logo from "../assets/UpNext_logo.png";
 import "../styles/SignUp.scss";
 import axios from "axios";
+import API_BASE from "../api";
 
 
 
@@ -95,7 +96,7 @@ function SignUp() {
 
     setIsLoading(true);
     try {
-      const response = await axios.post("http://127.0.0.1:8000/signup", {
+      const response = await axios.post(`${API_BASE}/signup`, {
         full_name: formData.fullName,
         email: formData.email,
         password: formData.password,

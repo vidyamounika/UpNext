@@ -6,7 +6,7 @@ import {
   FaBell, FaSearch, FaThLarge, FaChevronLeft, FaChevronRight, FaSun, FaRobot
 } from "react-icons/fa";
 import axios from "axios";
-import "../styles/SkillGapAnalysis.scss";
+import API_BASE from "../api";
 
 // ── Helper: 5-dot skill level indicator ─────────────────────────
 function SkillDots({ level }) {
@@ -133,7 +133,7 @@ function SkillGapAnalysis() {
     const email = localStorage.getItem("upnext_email");
     if (!email) { navigate("/login"); return; }
     axios
-      .get(`http://127.0.0.1:8000/skill-gap-data?email=${encodeURIComponent(email)}`)
+      .get(`${API_BASE}/skill-gap-data?email=${encodeURIComponent(email)}`)
       .then(res => setData(res.data))
       .catch(err => console.error(err))
       .finally(() => setLoading(false));

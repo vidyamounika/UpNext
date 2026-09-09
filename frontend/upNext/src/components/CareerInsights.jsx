@@ -6,7 +6,7 @@ import {
   FaBell, FaSearch, FaThLarge, FaChevronLeft, FaChevronRight,
   FaSun, FaGlobeAmericas, FaArrowUp, FaBriefcase, FaRupeeSign
 } from "react-icons/fa";
-import "../styles/CareerInsights.scss";
+import API_BASE from "../api";
 
 function getInitials(name) {
   return name ? name.split(" ").map(n => n[0]).join("").toUpperCase().slice(0, 2) : "U";
@@ -102,7 +102,7 @@ function CareerInsights() {
   useEffect(() => {
     const email = localStorage.getItem("upnext_email");
     if (!email) { navigate("/login"); return; }
-    fetch(`http://127.0.0.1:8000/dashboard-data?email=${encodeURIComponent(email)}`)
+    fetch(`${API_BASE}/dashboard-data?email=${encodeURIComponent(email)}`)
       .then(r => r.json())
       .then(d => {
         setUserName(d.user_name || "User");

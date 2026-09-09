@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { FaLock, FaEye, FaEyeSlash } from "react-icons/fa";
 import axios from "axios";
+import API_BASE from "../api";
 import "../styles/ForgotPassword.scss";
 
 function ForgotPassword() {
@@ -45,7 +46,7 @@ function ForgotPassword() {
 
     setIsLoading(true);
     try {
-      const response = await axios.post("http://127.0.0.1:8000/reset-password", {
+      const response = await axios.post(`${API_BASE}/reset-password`, {
         email,
         new_password: newPassword,
       });
