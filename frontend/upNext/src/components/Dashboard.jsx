@@ -349,6 +349,15 @@ function Dashboard() {
 
         </div>
       </main>
+
+      {/* Mobile Bottom Nav */}
+      <nav className="mob_nav">
+        <div className="mob_nav_item active" onClick={() => navigate("/dashboard")}><FaThLarge /><span>Home</span></div>
+        <div className="mob_nav_item" onClick={() => navigate("/skill-gap")}><FaBrain /><span>Skills</span></div>
+        <div className="mob_nav_item" onClick={() => navigate("/roadmap")}><FaMap /><span>Roadmap</span></div>
+        <div className="mob_nav_item" onClick={() => navigate("/career-insights")}><FaChartLine /><span>Insights</span></div>
+        <div className="mob_nav_item" onClick={() => navigate("/profile")}><FaUser /><span>Profile</span></div>
+      </nav>
     </div>
   );
 }

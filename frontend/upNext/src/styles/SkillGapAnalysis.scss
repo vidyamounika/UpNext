@@ -599,11 +599,19 @@
 /* ── Responsive ── */
 @media (max-width: 900px) {
   .sg_sidebar { display: none; }
-  .sg_main { margin-left: 0; }
+  .sg_main { margin-left: 0; padding-bottom: 60px; }
   .sg_main.collapsed { margin-left: 0; }
   .sg_priorities { grid-template-columns: 1fr; }
   .sg_matrix { grid-template-columns: 1fr; }
 }
+
+.mob_nav { display: none; }
+@media (max-width: 900px) {
+  .mob_nav { display: flex; position: fixed; bottom: 0; left: 0; right: 0; height: 60px; background: white; border-top: 1px solid #e5e7eb; z-index: 200; justify-content: space-around; align-items: center; box-shadow: 0 -2px 12px rgba(0,0,0,0.08); }
+  .mob_nav_item { display: flex; flex-direction: column; align-items: center; gap: 3px; font-size: 10px; color: #6b7280; cursor: pointer; flex: 1; padding: 6px 0; transition: color 0.2s; svg { font-size: 18px; } &.active { color: #7c3aed; } }
+}
+.sg_wrapper.dark .mob_nav { background: #13131f; border-top-color: #1e1e30; }
+.sg_wrapper.dark .mob_nav_item { color: #9ca3af; &.active { color: #a78bfa; } }
 
 /* ── Tablet (481px – 900px) ── */
 @media (min-width: 481px) and (max-width: 900px) {
