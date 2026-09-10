@@ -63,27 +63,6 @@ function HomePage() {
           <img src={UpNext_logo} alt="UpNext logo" />
         </div>
 
-        <div className="navLinks">
-          <p
-            className={activeSection === "features" ? "active" : ""}
-            onClick={() => scrollToSection(featuresRef)}
-          >
-            Features
-          </p>
-
-          <p
-            className={activeSection === "howItWorks" ? "active" : ""}
-            onClick={() => scrollToSection(howItWorksRef)}
-          >
-            How It Works
-          </p>
-
-        
-          <p
-           className={activeSection === "ctaBox" ? "active" : ""}
-            onClick={() => scrollToSection(ctaBoxRef)}
-          >Blog</p>
-        </div>
 
         <div className="auth_btns">
           <button onClick={()=>navigate("/login")}>Log In</button>
@@ -234,3 +213,25 @@ function HomePage() {
 }
 
 export default HomePage;
+
+        {/* <div className="navLinks">
+          <p
+            className={activeSection === "features" ? "active" : ""}
+            onClick={() => scrollToSection(featuresRef)}
+          >
+            Features
+          </p>
+
+          <p
+            className={activeSection === "howItWorks" ? "active" : ""}
+            onClick={() => scrollToSection(howItWorksRef)}
+          >
+            How It Works
+          </p>
+
+        
+          <p
+           className={activeSection === "ctaBox" ? "active" : ""}
+            onClick={() => scrollToSection(ctaBoxRef)}
+          >Blog</p>
+        </div> */}
